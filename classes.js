@@ -13,6 +13,8 @@ let lastTimeStamp = performance.now()/1000;
 let gridOffsetX = 500;
 let gridOffsetY = 200;
 
+let nextMoves = [];
+
 // SPRITE CLASS
 class Sprite {
     constructor(xPos, yPos, width, height, xSpeed = 0, ySpeed = 0, color = 'red'){

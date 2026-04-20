@@ -27,3 +27,11 @@ function remove(array, object){
         }
     }
 }
+
+function markNextMoves(){
+    for(i = 0; i < nextMoves.length; i++){
+        if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
+            grid[nextMoves[i][1]][nextMoves[i][0]].color = 'white';
+        }
+    }
+}
