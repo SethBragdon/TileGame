@@ -46,3 +46,16 @@ function runNextMoves(){
         nextMoves = [];
     }
 }
+
+function wipeNextMoves(){
+    for(i = 0; i < nextMoves.length; i++){
+        if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
+            grid[nextMoves[i][1]][nextMoves[i][0]].color = 'black';
+        }
+        nextMoves = [];
+    }
+}
+
+function oneForeward(xMultiplier, yMultiplier){
+    return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
+}

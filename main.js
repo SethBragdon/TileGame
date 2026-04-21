@@ -34,21 +34,26 @@ window.addEventListener('keydown', (event) => {
     switch(event.key){
         case 'ArrowRight':
             if(grid[player.yTile][player.xTile + 1] != null){
-                player.xTile++;
+                wipeNextMoves();
+                nextMoves = oneForeward(1, 0);
+                player.markNextMoves();
             }
             break;
         case 'ArrowLeft':
             if(grid[player.yTile][player.xTile - 1] != null){
+                wipeNextMoves();
                 player.xTile--;
             }
             break;
         case 'ArrowUp':
             if(grid[player.yTile - 1][player.xTile] != null){
+                wipeNextMoves();
                 player.yTile--;
             }
             break;
         case 'ArrowDown':
             if(grid[player.yTile + 1][player.xTile] != null){
+                wipeNextMoves();
                 player.yTile++;
             }
             break;

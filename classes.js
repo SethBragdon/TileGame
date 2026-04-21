@@ -14,6 +14,7 @@ let gridOffsetX = 500;
 let gridOffsetY = 200;
 
 let nextMoves = [];
+let nextMoveFunction;
 
 // SPRITE CLASS
 class Sprite {

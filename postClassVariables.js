@@ -6,7 +6,7 @@ let grid = [
     [new Tile(0, 3), new Tile(1, 3), new Tile(2, 3), new Tile(3, 3), new Tile(4, 3)],
     [new Tile(0, 4), new Tile(1, 4), new Tile(2, 4), new Tile(3, 4), new Tile(4, 4)]];
 
-nextMoves.push([0, 1]);
+nextMoves.push();
 
 // SPRITES
 //player
