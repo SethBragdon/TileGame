@@ -69,3 +69,33 @@ class Tile {
         c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
     }
 }
+
+// TEXT CLASS
+class TextSprite
+{
+    constructor(text, size, posX, posY, color = 'white')
+    {
+        this.text = text;
+        this.size = size;
+        this.posX = posX;
+        this.posY = posY;
+        this.color = color;
+
+        // Used for reseting position
+        this.originX = posX;
+        this.originY = posY;
+    }
+    
+    draw()
+    {
+        c.fillStyle = this.color;
+        c.font = this.size + ' Arial';
+        c.fillText(this.text, this.posX, this.posY);
+    }
+
+    resetText()
+    {
+        this.posX = this.originX;
+        this.posY = this.originY;
+    }
+}

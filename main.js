@@ -26,6 +26,9 @@ function mainLoop(){
     // Update player
     player.update();
 
+    // Update text
+    greeting.draw();
+
     window.requestAnimationFrame(mainLoop);
 }
 
