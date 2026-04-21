@@ -57,5 +57,9 @@ function wipeNextMoves(){
 }
 
 function oneForeward(xMultiplier, yMultiplier){
-    return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
+    if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null){
+        wipeNextMoves();
+        return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
+    }
+    return nextMoves;
 }
