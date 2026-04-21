@@ -52,6 +52,9 @@ window.addEventListener('keydown', (event) => {
                 player.yTile++;
             }
             break;
+        case 'Enter':
+            runNextMoves();
+            break;
     }
 });
 
