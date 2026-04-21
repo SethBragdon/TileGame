@@ -10,6 +10,3 @@ let grid = [
 //player
 let player = new MapboundSprite(1, 3, 50, 50, 0, 0, 'yellow');
 let sprites = [player];
-
-// TEXT
-let greeting = new TextSprite('Yo yo yo Ima text', '32px', 500, 100);

@@ -12,6 +12,7 @@ function rectangularCollision(sprite1, sprite2){
     sprite1.yPos + sprite1.height > sprite2.yPos;
 }
 
+// ARRAY METHODS
 function copyArray(array){
     let newArray = [];
     for(let i = 0; i < array.length; i++){
@@ -20,6 +21,23 @@ function copyArray(array){
     return newArray;
 }
 
+function parseNumberForward(number, limit){
+    number++;
+    if(number >= limit){
+        number = 0;
+    }
+    return number;
+}
+function parseNumberBackward(number, limit){
+    number--;
+    if(number < 0){
+        number = limit - 1;
+    }
+    return number;
+
+}
+
+// MOVEMENT OPTIONS
 function remove(array, object){
     for(let i = 0; i < array.length; i++){
         if(array[i] == object){
@@ -60,6 +78,14 @@ function oneForeward(xMultiplier, yMultiplier){
     if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null){
         wipeNextMoves();
         return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
+    }
+    return nextMoves;
+}
+
+function twoForewardTele(xMultiplier, yMultiplier){
+    if(grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)] != null){
+        wipeNextMoves();
+        return [[player.xTile + (2 * xMultiplier), player.yTile + (2 * yMultiplier)]];
     }
     return nextMoves;
 }

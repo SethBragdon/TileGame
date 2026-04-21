@@ -99,3 +99,10 @@ class TextSprite
         this.posY = this.originY;
     }
 }
+
+class MoveOption{
+    constructor(move, name){
+        this.move = move;
+        this.name = name;
+    }
+}

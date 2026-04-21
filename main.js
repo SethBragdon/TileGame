@@ -57,6 +57,16 @@ window.addEventListener('keydown', (event) => {
         case 'Enter':
             runNextMoves();
             break;
+        case 'a':
+            moveIndex = parseNumberBackward(moveIndex, moveOptions.length);
+            greeting.text = moveOptions[moveIndex].name;
+            nextMoveFunction = moveOptions[moveIndex].move;
+            break;
+        case 'd':
+            moveIndex = parseNumberForward(moveIndex, moveOptions.length);
+            greeting.text = moveOptions[moveIndex].name;
+            nextMoveFunction = moveOptions[moveIndex].move;
+            break;
     }
 });
 
