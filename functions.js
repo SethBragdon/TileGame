@@ -59,7 +59,7 @@ function runNextMoves(){
         if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
             player.xTile = nextMoves[i][0];
             player.yTile = nextMoves[i][1];
-            grid[nextMoves[i][1]][nextMoves[i][0]].color = 'black';
+            grid[nextMoves[i][1]][nextMoves[i][0]].reset();
         }
         nextMoves = [];
     }
@@ -68,7 +68,7 @@ function runNextMoves(){
 function wipeNextMoves(){
     for(i = 0; i < nextMoves.length; i++){
         if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
-            grid[nextMoves[i][1]][nextMoves[i][0]].color = 'black';
+            grid[nextMoves[i][1]][nextMoves[i][0]].reset();
         }
         nextMoves = [];
     }

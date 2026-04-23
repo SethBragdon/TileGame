@@ -1,7 +1,7 @@
 // Set up canvas
 const canvas = document.getElementById('main');
 canvas.width = window.innerWidth -20;
-canvas.height = window.innerHeight -20;
+canvas.height = window.innerHeight -21;
 const c = canvas.getContext('2d');
 c.fillStyle = 'black';
 c.fillRect(0, 0, canvas.width, canvas.height);
@@ -10,7 +10,7 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 let deltaTime = 0;
 let lastTimeStamp = performance.now()/1000;
 
-let gridOffsetX = 500;
+let gridOffsetX = 200;
 let gridOffsetY = 200;
 
 let nextMoves = [];
@@ -62,11 +62,16 @@ class Tile {
         this.xTile = xTile;
         this.yTile = yTile;
         this.color = color;
+        this.orgColor = color;
     }
 
     draw(){
         c.fillStyle = this.color;
         c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
+    }
+
+    reset(){
+        this.color = this.orgColor;
     }
 }
 
