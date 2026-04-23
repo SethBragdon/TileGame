@@ -56,7 +56,7 @@ function markNextMoves(){
 
 function runNextMoves(){
     for(i = 0; i < nextMoves.length; i++){
-        if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
+        if(nextMoves[i][0] != null && nextMoves[i][1] != null){
             player.xTile = nextMoves[i][0];
             player.yTile = nextMoves[i][1];
             grid[nextMoves[i][1]][nextMoves[i][0]].reset();
@@ -67,7 +67,7 @@ function runNextMoves(){
 
 function wipeNextMoves(){
     for(i = 0; i < nextMoves.length; i++){
-        if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
+        if(nextMoves[i][0] != null && nextMoves[i][1] != null){
             grid[nextMoves[i][1]][nextMoves[i][0]].reset();
         }
         nextMoves = [];
@@ -75,7 +75,8 @@ function wipeNextMoves(){
 }
 
 function oneForeward(xMultiplier, yMultiplier){
-    if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null){
+    if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null
+    && grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)].traversable){
         wipeNextMoves();
         return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
     }
@@ -83,7 +84,8 @@ function oneForeward(xMultiplier, yMultiplier){
 }
 
 function twoForewardTele(xMultiplier, yMultiplier){
-    if(grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)] != null){
+    if(grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)] != null
+    && grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)].traversable){
         wipeNextMoves();
         return [[player.xTile + (2 * xMultiplier), player.yTile + (2 * yMultiplier)]];
     }
