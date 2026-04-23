@@ -61,8 +61,8 @@ function runNextMoves(){
             player.yTile = nextMoves[i][1];
             grid[nextMoves[i][1]][nextMoves[i][0]].reset();
         }
-        nextMoves = [];
     }
+            nextMoves = [];
 }
 
 function wipeNextMoves(){
@@ -70,8 +70,8 @@ function wipeNextMoves(){
         if(nextMoves[i][0] != null && nextMoves[i][1] != null){
             grid[nextMoves[i][1]][nextMoves[i][0]].reset();
         }
-        nextMoves = [];
     }
+    nextMoves = [];
 }
 
 function oneForeward(xMultiplier, yMultiplier){
@@ -104,6 +104,7 @@ function tripleForeward(xMultiplier, yMultiplier){
         }
     }
     if(moveSet != []){
+        wipeNextMoves();
         return moveSet;
     }
     return nextMoves;
