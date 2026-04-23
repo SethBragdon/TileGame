@@ -1,5 +1,7 @@
 // MOVES
-let moveOptions = [new MoveOption(oneForeward, 'Single Step'), new MoveOption(twoForewardTele, 'Double Teleport')];
+let moveOptions = [new MoveOption(oneForeward, 'Single Step'),
+    new MoveOption(twoForewardTele, 'Double Teleport'),
+    new MoveOption(tripleForeward, 'Triple Run')];
 let moveIndex = 0;
 
 // TEXT

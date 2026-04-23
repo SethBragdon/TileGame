@@ -91,3 +91,20 @@ function twoForewardTele(xMultiplier, yMultiplier){
     }
     return nextMoves;
 }
+
+function tripleForeward(xMultiplier, yMultiplier){
+    let moveSet = [];
+    for(let i = 1; i <= 3; i++){
+        if(grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
+        && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].traversable){
+            moveSet.push([(player.xTile + (i * xMultiplier)), (player.yTile + (i * yMultiplier))]);
+        } else {
+            alert('break');
+            break;
+        }
+    }
+    if(moveSet != []){
+        return moveSet;
+    }
+    return nextMoves;
+}
