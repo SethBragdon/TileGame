@@ -40,19 +40,19 @@ window.addEventListener('keydown', (event) => {
     switch(event.key){
         case 'ArrowRight':
             nextMoves = nextMoveFunction(1, 0);
-            player.markNextMoves();
+            markNextMoves();
             break;
         case 'ArrowLeft':
             nextMoves = nextMoveFunction(-1, 0);
-            player.markNextMoves();
+            markNextMoves();
             break;
         case 'ArrowUp':
             nextMoves = nextMoveFunction(0, -1);
-            player.markNextMoves();
+            markNextMoves();
             break;
         case 'ArrowDown':
             nextMoves = nextMoveFunction(0, 1);
-            player.markNextMoves();
+            markNextMoves();
             break;
         case 'Enter':
             runNextMoves();

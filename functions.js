@@ -98,8 +98,8 @@ function tripleForeward(xMultiplier, yMultiplier){
         if(grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
         && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].traversable){
             moveSet.push([(player.xTile + (i * xMultiplier)), (player.yTile + (i * yMultiplier))]);
+            alert(moveSet.length);
         } else {
-            alert('break');
             break;
         }
     }
@@ -107,5 +107,6 @@ function tripleForeward(xMultiplier, yMultiplier){
         wipeNextMoves();
         return moveSet;
     }
+    alert('miss');
     return nextMoves;
 }
