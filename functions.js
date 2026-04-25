@@ -95,10 +95,9 @@ function twoForewardTele(xMultiplier, yMultiplier){
 function tripleForeward(xMultiplier, yMultiplier){
     let moveSet = [];
     for(let i = 1; i <= 3; i++){
-        if(grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
+        if(grid[player.yTile + (i * yMultiplier)] != null && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
         && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].traversable){
-            moveSet.push([(player.xTile + (i * xMultiplier)), (player.yTile + (i * yMultiplier))]);
-            alert(moveSet.length);
+            moveSet.push([player.xTile + (i * xMultiplier), player.yTile + (i * yMultiplier)]);
         } else {
             break;
         }
