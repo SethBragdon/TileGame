@@ -27,7 +27,9 @@ function mainLoop(){
     player.update();
 
     // Update text
-    greeting.draw();
+    for(let i = 0; i < textSprites.length; i++){
+        textSprites[i].draw();
+    }
 
     window.requestAnimationFrame(mainLoop);
 }
@@ -57,15 +59,17 @@ window.addEventListener('keydown', (event) => {
         case 'Enter':
             runNextMoves();
             break;
-        case 'a':
-            moveIndex = parseNumberBackward(moveIndex, moveOptions.length);
-            greeting.text = moveOptions[moveIndex].name;
-            nextMoveFunction = moveOptions[moveIndex].move;
-            break;
         case 'd':
-            moveIndex = parseNumberForward(moveIndex, moveOptions.length);
-            greeting.text = moveOptions[moveIndex].name;
+            moveChoiceTextSprites[moveIndex].color = 'white';
+            moveIndex = parseNumberBackward(moveIndex, moveOptions.length);
             nextMoveFunction = moveOptions[moveIndex].move;
+            moveChoiceTextSprites[moveIndex].color = 'yellow';
+            break;
+        case 'a':
+            moveChoiceTextSprites[moveIndex].color = 'white';
+            moveIndex = parseNumberForward(moveIndex, moveOptions.length);
+            nextMoveFunction = moveOptions[moveIndex].move;
+            moveChoiceTextSprites[moveIndex].color = 'yellow';
             break;
     }
 });

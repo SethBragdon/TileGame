@@ -37,7 +37,6 @@ function parseNumberBackward(number, limit){
 
 }
 
-// MOVEMENT OPTIONS
 function remove(array, object){
     for(let i = 0; i < array.length; i++){
         if(array[i] == object){
@@ -46,6 +45,11 @@ function remove(array, object){
     }
 }
 
+function randomArrayFrom(array){
+    
+}
+
+// MOVE PROCESSING METHODS
 function markNextMoves(){
     for(i = 0; i < nextMoves.length; i++){
         if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
@@ -74,6 +78,7 @@ function wipeNextMoves(){
     nextMoves = [];
 }
 
+// MOVEMENT OPTIONS
 function oneForeward(xMultiplier, yMultiplier){
     if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null
     && grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)].traversable){
