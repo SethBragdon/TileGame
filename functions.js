@@ -46,7 +46,11 @@ function remove(array, object){
 }
 
 function randomArrayFrom(array){
-    
+    let outputArray = [];
+    for(let i = 0; i < array.length; i++){
+        outputArray.push(array[Math.floor(Math.random() * array.length)]);
+    }
+    return outputArray;
 }
 
 // MOVE PROCESSING METHODS
