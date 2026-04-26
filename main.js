@@ -67,7 +67,6 @@ window.addEventListener('keydown', (event) => {
 
                 // If moves are empty restore move options
                 if(moveOptions.length <= 0){
-                    alert('got here');
                     moveOptions = randomArrayFrom(moveBank);
                     moveChoiceTextSprites = [
                     new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 

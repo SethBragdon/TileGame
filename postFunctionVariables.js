@@ -5,8 +5,6 @@ let moveBank = [new MoveOption(oneForeward, 'Single Step'),
 let moveOptions = randomArrayFrom(moveBank);
 let moveIndex = 0;
 
-alert(randomArrayFrom(moveBank).length);
-
 // TEXT
 let moveChoiceTextSprites = [
 new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
