@@ -1,5 +1,5 @@
 // DEFAULT NEXT MOVE FUNCTION
-nextMoveFunction = oneForeward;
+nextMoveFunction = moveOptions[moveIndex].move;
 
 // MAIN LOOP
 function mainLoop(){
@@ -57,7 +57,33 @@ window.addEventListener('keydown', (event) => {
             markNextMoves();
             break;
         case 'Enter':
-            runNextMoves();
+            if(nextMoves.length > 0){
+                runNextMoves();
+
+                // Get rid of the current move
+                moveChoiceTextSprites.splice(moveIndex, 1);
+                textSprites = moveChoiceTextSprites;
+                moveOptions.splice(moveIndex, 1);
+
+                // If moves are empty restore move options
+                if(moveOptions.length <= 0){
+                    alert('got here');
+                    moveOptions = randomArrayFrom(moveBank);
+                    moveChoiceTextSprites = [
+                    new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
+                    new TextSprite(moveOptions[1].name, '32px', 100, 100),
+                    new TextSprite(moveOptions[2].name, '32px', 900, 100)];
+                    for(let i = 0; i < moveChoiceTextSprites.length; i++){
+                        textSprites.push(moveChoiceTextSprites[i]);
+                    }
+                }
+
+                moveIndex = 0;
+                moveChoiceTextSprites[moveIndex].color = 'yellow';
+            } else {
+                runNextMoves();
+            }
+            nextMoveFunction = moveOptions[moveIndex].move;
             break;
         case 'd':
             moveChoiceTextSprites[moveIndex].color = 'white';
