@@ -119,7 +119,17 @@ function tripleForeward(xMultiplier, yMultiplier){
     return nextMoves;
 }
 
-// Tile related functions
+// TTLE FUNCTIONS
 function GrassTile(xTile, yTile){
-    return new Tile(xTile, yTile, grassTileColorOptions[Math.floor(Math.random()*grassTileColorOptions.length)]);
+    if((xTile + yTile) % 2 == 0){
+        return new Tile(xTile, yTile, grassTileColorOptions[0]);
+    }
+    return new Tile(xTile, yTile, grassTileColorOptions[1]);
+}
+
+function RockTile(xTile, yTile){
+    if((xTile + yTile) % 2 == 0){
+        return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false);
+    }
+    return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false);
 }
