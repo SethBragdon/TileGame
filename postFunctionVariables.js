@@ -1,10 +1,10 @@
 grid = [
-    [new Tile(0, 0), new Tile(1, 0), new Tile(2, 0), new Tile(3, 0), new Tile(4, 0), new Tile(5, 0), new Tile(6, 0), new Tile(7, 0), new Tile(8, 0, 'brown', false)],
-    [new Tile(0, 1), new Tile(1, 1), new Tile(2, 1), new Tile(3, 1), new Tile(4, 1), new Tile(5, 1), new Tile(6, 1, 'brown', false), new Tile(7, 1, 'green'), new Tile(8, 1)],
-    [new Tile(0, 2), new Tile(1, 2), new Tile(2, 2, 'brown', false), new Tile(3, 2), new Tile(4, 2), new Tile(5, 2, 'brown', false), new Tile(6, 2), new Tile(7, 2), new Tile(8, 2)],
-    [new Tile(0, 3), new Tile(1, 3), new Tile(2, 3, 'brown', false), new Tile(3, 3), new Tile(4, 3), new Tile(5, 3), new Tile(6, 3, 'brown', false), new Tile(7, 3, 'brown', false), new Tile(8, 3, 'brown', false)],
-    [new Tile(0, 4), new Tile(1, 4), new Tile(2, 4, 'brown', false), new Tile(3, 4), new Tile(4, 4), new Tile(5, 4), new Tile(6, 4), new Tile(7, 4), new Tile(8, 4)],
-    [new Tile(0, 5), new Tile(1, 5), new Tile(2, 5), new Tile(3, 5), new Tile(4, 5), new Tile(5, 5), new Tile(6, 5), new Tile(7, 5), new Tile(8, 5)]];
+    [GrassTile(0, 0), GrassTile(1, 0), GrassTile(2, 0), GrassTile(3, 0), GrassTile(4, 0), GrassTile(5, 0), GrassTile(6, 0), GrassTile(7, 0), new Tile(8, 0, 'brown', false)],
+    [GrassTile(0, 1), GrassTile(1, 1), GrassTile(2, 1), GrassTile(3, 1), GrassTile(4, 1), GrassTile(5, 1), new Tile(6, 1, 'brown', false), new Tile(7, 1, 'rgb(2, 177, 212)'), GrassTile(8, 1)],
+    [GrassTile(0, 2), GrassTile(1, 2), new Tile(2, 2, 'brown', false), GrassTile(3, 2), GrassTile(4, 2), new Tile(5, 2, 'brown', false), GrassTile(6, 2), GrassTile(7, 2), GrassTile(8, 2)],
+    [GrassTile(0, 3), GrassTile(1, 3), new Tile(2, 3, 'brown', false), GrassTile(3, 3), GrassTile(4, 3), GrassTile(5, 3), new Tile(6, 3, 'brown', false), new Tile(7, 3, 'brown', false), new Tile(8, 3, 'brown', false)],
+    [GrassTile(0, 4), GrassTile(1, 4), new Tile(2, 4, 'brown', false), GrassTile(3, 4), GrassTile(4, 4), GrassTile(5, 4), GrassTile(6, 4), GrassTile(7, 4), GrassTile(8, 4)],
+    [GrassTile(0, 5), GrassTile(1, 5), GrassTile(2, 5), GrassTile(3, 5), GrassTile(4, 5), GrassTile(5, 5), GrassTile(6, 5), GrassTile(7, 5), GrassTile(8, 5)]];
 
 
 // MOVES

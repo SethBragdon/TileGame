@@ -118,3 +118,8 @@ function tripleForeward(xMultiplier, yMultiplier){
     alert('miss');
     return nextMoves;
 }
+
+// Tile related functions
+function GrassTile(xTile, yTile){
+    return new Tile(xTile, yTile, grassTileColorOptions[Math.floor(Math.random()*grassTileColorOptions.length)]);
+}

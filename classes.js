@@ -30,7 +30,6 @@ class Sprite {
         this.image = image;
 
         if(this.image != null){
-            alert('has image');
             this.image = document.createElement('img');
             this.image.width = this.width;
             this.image.height = this.height;
@@ -71,7 +70,7 @@ class MapboundSprite extends Sprite {
 
 // TILE CLASS
 class Tile {
-    constructor(xTile = null, yTile = null, color = 'rgb(15, 186, 109)', traversable = true){
+    constructor(xTile = null, yTile = null, color = 'black', traversable = true){
         this.xTile = xTile;
         this.yTile = yTile;
         this.color = color;
