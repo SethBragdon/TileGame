@@ -4,7 +4,7 @@ grid = [
     [new Tile(0, 2), new Tile(1, 2), new Tile(2, 2, 'brown', false), new Tile(3, 2), new Tile(4, 2), new Tile(5, 2, 'brown', false), new Tile(6, 2), new Tile(7, 2), new Tile(8, 2)],
     [new Tile(0, 3), new Tile(1, 3), new Tile(2, 3, 'brown', false), new Tile(3, 3), new Tile(4, 3), new Tile(5, 3), new Tile(6, 3, 'brown', false), new Tile(7, 3, 'brown', false), new Tile(8, 3, 'brown', false)],
     [new Tile(0, 4), new Tile(1, 4), new Tile(2, 4, 'brown', false), new Tile(3, 4), new Tile(4, 4), new Tile(5, 4), new Tile(6, 4), new Tile(7, 4), new Tile(8, 4)],
-    [new Tile(0, 5), new Tile(1, 5), new Tile(2, 5, 'brown', false), new Tile(3, 5), new Tile(4, 5), new Tile(5, 5), new Tile(6, 5), new Tile(7, 5), new Tile(8, 5)]];
+    [new Tile(0, 5), new Tile(1, 5), new Tile(2, 5), new Tile(3, 5), new Tile(4, 5), new Tile(5, 5), new Tile(6, 5), new Tile(7, 5), new Tile(8, 5)]];
 
 
 // MOVES

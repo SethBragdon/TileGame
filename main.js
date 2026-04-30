@@ -43,6 +43,7 @@ window.addEventListener('keydown', (event) => {
         case 'ArrowRight':
             nextMoves = nextMoveFunction(1, 0);
             markNextMoves();
+            player.image.src = 'Images\\RobotRight.png';
             break;
         case 'ArrowLeft':
             nextMoves = nextMoveFunction(-1, 0);
@@ -50,6 +51,7 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'ArrowUp':
             nextMoves = nextMoveFunction(0, -1);
+            player.image.src = 'Images\\RobotUp.svg';
             markNextMoves();
             break;
         case 'ArrowDown':
