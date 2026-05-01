@@ -62,15 +62,13 @@ function markNextMoves(){
     }
 }
 
-function runNextMoves(){
-    for(i = 0; i < nextMoves.length; i++){
-        if(nextMoves[i][0] != null && nextMoves[i][1] != null){
-            player.xTile = nextMoves[i][0];
-            player.yTile = nextMoves[i][1];
-            grid[nextMoves[i][1]][nextMoves[i][0]].reset();
-        }
+function runNextMove(){
+    if(nextMoves[0][0] != null && nextMoves[0][1] != null && grid[nextMoves[0][1]][nextMoves[0][0]]){
+        player.xTile = nextMoves[0][0];
+        player.yTile = nextMoves[0][1];
+        grid[nextMoves[0][1]][nextMoves[0][0]].reset();
+        nextMoves.splice(0, 1);
     }
-            nextMoves = [];
 }
 
 function wipeNextMoves(){
@@ -147,6 +145,13 @@ function RockTile(xTile, yTile){
         return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false, 'rock');
     }
     return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false, 'rock');
+}
+
+function LavaTile(xTile, yTile){
+    if((xTile + yTile) % 2 == 0){
+        return new Tile(xTile, yTile, 'rgb(205, 12, 12)', true, 'lava');
+    }
+    return new Tile(xTile, yTile, 'rgb(230, 20, 20)', true, 'lava');
 }
 
 function LaunchPad(xTile, yTile){

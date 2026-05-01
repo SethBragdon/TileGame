@@ -23,6 +23,21 @@ function mainLoop(){
         }
     }
 
+    if(runningNextMoves && nextMoves != []){
+        runNextMove();
+        if(grid[player.yTile][player.xTile].type == 'lava'){
+            nextLevel(true);
+            runNextMoves = false;
+            nextMoves = [];
+        }
+
+        if(nextMoves.length <= 0){
+            nextMoves = [];
+            runningNextMoves = false;
+            updateRound();
+        }
+    }
+
     // Update player
     player.update();
 
@@ -66,14 +81,12 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'Enter':
             if(nextMoves.length > 0){
-                runNextMoves();
+                runningNextMoves = true;
 
                 // Get rid of the current move
                 moveChoiceTextSprites.splice(moveIndex, 1);
                 textSprites = moveChoiceTextSprites;
                 moveOptions.splice(moveIndex, 1);
-
-                updateRound();
 
                 // If moves are empty restore move options
                 if(moveOptions.length <= 0){
@@ -86,8 +99,6 @@ window.addEventListener('keydown', (event) => {
 
                 moveIndex = 0;
                 moveChoiceTextSprites[moveIndex].color = 'yellow';
-            } else {
-                runNextMoves();
             }
             nextMoveFunction = moveOptions[moveIndex].move;
             break;

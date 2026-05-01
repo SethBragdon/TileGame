@@ -1,7 +1,7 @@
 // LEVELS
 // Level grids
 let level1_1Grid = [
-    [GrassTile(0, 0), GrassTile(1, 0), GrassTile(2, 0), GrassTile(3, 0), GrassTile(4, 0), GrassTile(5, 0), GrassTile(6, 0), GrassTile(7, 0), RockTile(8, 0)],
+    [GrassTile(0, 0), GrassTile(1, 0), GrassTile(2, 0), LavaTile(3, 0), GrassTile(4, 0), GrassTile(5, 0), GrassTile(6, 0), GrassTile(7, 0), RockTile(8, 0)],
     [GrassTile(0, 1), GrassTile(1, 1), GrassTile(2, 1), GrassTile(3, 1), GrassTile(4, 1), GrassTile(5, 1), RockTile(6, 1), LaunchPad(7, 1), GrassTile(8, 1)],
     [GrassTile(0, 2), GrassTile(1, 2), RockTile(2, 2), GrassTile(3, 2), GrassTile(4, 2), RockTile(5, 2), GrassTile(6, 2), GrassTile(7, 2), GrassTile(8, 2)],
     [GrassTile(0, 3), GrassTile(1, 3), RockTile(2, 3), GrassTile(3, 3), GrassTile(4, 3), RockTile(5, 3), RockTile(6, 3), RockTile(7, 3), RockTile(8, 3)],

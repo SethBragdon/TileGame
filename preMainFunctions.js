@@ -1,10 +1,18 @@
-function nextLevel(){
-    if((currentLevel + 1) < levels.length){
-        currentLevel = parseNumberForward(currentLevel, levels.length);
+function nextLevel(reset = false){
+    if(!reset){
+        if((currentLevel + 1) < levels.length){
+            currentLevel = parseNumberForward(currentLevel, levels.length);
+        }
     }
-    grid = levels[currentLevel].grid;
     player.xTile = levels[currentLevel].xStart;
     player.yTile = levels[currentLevel].yStart;
+
+    grid = levels[currentLevel].grid;
+    for(let y = 0; y < grid.length; y++){
+        for(let x = 0; x < grid[y].length; x++){
+            grid[y][x].reset();
+        }
+    }
 
     moveOptions = randomArrayFrom(moveBank, 3);
     moveIndex = 0;
@@ -15,6 +23,7 @@ function nextLevel(){
     for(let i = 0; i < moveChoiceTextSprites.length; i++){
         textSprites.push(moveChoiceTextSprites[i]);
     }
+    nextMoveFunction = moveOptions[moveIndex].move;
 }
 
 function updateRound(){
