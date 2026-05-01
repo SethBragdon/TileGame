@@ -41,21 +41,25 @@ mainLoop();
 window.addEventListener('keydown', (event) => {
     switch(event.key){
         case 'ArrowRight':
+            wipeNextMoves();
             nextMoves = nextMoveFunction(1, 0);
             markNextMoves();
             player.image.src = 'Images\\RobotRight.svg';
             break;
         case 'ArrowLeft':
+            wipeNextMoves();
             nextMoves = nextMoveFunction(-1, 0);
             player.image.src = 'Images\\RobotLeft.svg';
             markNextMoves();
             break;
         case 'ArrowUp':
+            wipeNextMoves();
             nextMoves = nextMoveFunction(0, -1);
             player.image.src = 'Images\\RobotUp.svg';
             markNextMoves();
             break;
         case 'ArrowDown':
+            wipeNextMoves();
             nextMoves = nextMoveFunction(0, 1);
             player.image.src = 'Images\\RobotDown.svg';
             markNextMoves();
@@ -89,12 +93,14 @@ window.addEventListener('keydown', (event) => {
             nextMoveFunction = moveOptions[moveIndex].move;
             break;
         case 'd':
+            wipeNextMoves();
             moveChoiceTextSprites[moveIndex].color = 'white';
             moveIndex = parseNumberBackward(moveIndex, moveOptions.length);
             nextMoveFunction = moveOptions[moveIndex].move;
             moveChoiceTextSprites[moveIndex].color = 'yellow';
             break;
         case 'a':
+            wipeNextMoves();
             moveChoiceTextSprites[moveIndex].color = 'white';
             moveIndex = parseNumberForward(moveIndex, moveOptions.length);
             nextMoveFunction = moveOptions[moveIndex].move;

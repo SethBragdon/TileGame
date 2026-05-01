@@ -134,17 +134,17 @@ function tripleForeward(xMultiplier, yMultiplier){
     return nextMoves;
 }
 
-// TTLE FUNCTIONS
+// TILE FUNCTIONS
 function GrassTile(xTile, yTile){
     if((xTile + yTile) % 2 == 0){
-        return new Tile(xTile, yTile, grassTileColorOptions[0]);
+        return new Tile(xTile, yTile, grassTileColorOptions[0], true, 'grass');
     }
-    return new Tile(xTile, yTile, grassTileColorOptions[1]);
+    return new Tile(xTile, yTile, grassTileColorOptions[1], true, 'grass');
 }
 
 function RockTile(xTile, yTile){
     if((xTile + yTile) % 2 == 0){
-        return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false);
+        return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false, 'rock');
     }
-    return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false);
+    return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false, 'rock');
 }

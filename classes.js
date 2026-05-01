@@ -70,12 +70,14 @@ class MapboundSprite extends Sprite {
 
 // TILE CLASS
 class Tile {
-    constructor(xTile = null, yTile = null, color = 'black', traversable = true){
+    constructor(xTile = null, yTile = null, color = 'black', traversable = true, type = 'grass', state = 'nuetral'){
         this.xTile = xTile;
         this.yTile = yTile;
         this.color = color;
         this.orgColor = color;
         this.traversable = traversable;
+        this.type = type;
+        this.state = state;
     }
 
     draw(){
