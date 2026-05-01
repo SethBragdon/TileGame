@@ -7,6 +7,7 @@ function nextLevel(){
     player.yTile = levels[currentLevel].yStart;
 
     moveOptions = randomArrayFrom(moveBank, 3);
+    moveIndex = 0;
     moveChoiceTextSprites = [
         new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
         new TextSprite(moveOptions[1].name, '32px', 100, 100),

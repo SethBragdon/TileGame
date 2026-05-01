@@ -14,8 +14,14 @@ let level1_2Grid = [
     [GrassTile(0, 1), RockTile(1, 1), GrassTile(2, 1)],
     [GrassTile(0, 2), GrassTile(1, 2), LaunchPad(2, 2)]];
 
+let level1_3Grid = [
+    [GrassTile(0, 0), GrassTile(1, 0), RockTile(2, 0), RockTile(3, 0), GrassTile(4, 0), LaunchPad(5, 0)],
+    [GrassTile(0, 1), GrassTile(1, 1), RockTile(2, 1), GrassTile(3, 1), RockTile(4, 1), GrassTile(5, 1)],
+    [GrassTile(0, 2), GrassTile(1, 2), GrassTile(2, 2), RockTile(3, 2), GrassTile(4, 2), GrassTile(5, 2)],
+    [GrassTile(0, 3), GrassTile(1, 3), GrassTile(2, 3), GrassTile(3, 3), GrassTile(4, 3), GrassTile(5, 3)]];
+
 // Level array
-let levels = [new Level(level1_1Grid, 0, 4), new Level(level1_2Grid, 0, 0)];
+let levels = [new Level(level1_1Grid, 0, 4), new Level(level1_2Grid, 0, 0), new Level(level1_3Grid, 0, 0)];
 let currentLevel = 0;
 
 grid = levels[currentLevel].grid;
