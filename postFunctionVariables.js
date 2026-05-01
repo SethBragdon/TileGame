@@ -10,8 +10,9 @@ grid = [
 // MOVES
 let moveBank = [new MoveOption(oneForeward, 'Single Step'),
     new MoveOption(twoForewardTele, 'Double Teleport'),
-    new MoveOption(tripleForeward, 'Triple Run')];
-let moveOptions = randomArrayFrom(moveBank);
+    new MoveOption(tripleForeward, 'Triple Run'),
+    new MoveOption(oneDiagonal, 'Diagonal Step')];
+let moveOptions = randomArrayFrom(moveBank, 3);
 let moveIndex = 0;
 
 // TEXT

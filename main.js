@@ -43,7 +43,7 @@ window.addEventListener('keydown', (event) => {
         case 'ArrowRight':
             nextMoves = nextMoveFunction(1, 0);
             markNextMoves();
-            player.image.src = 'Images\\RobotRight.png';
+            player.image.src = 'Images\\RobotRight.svg';
             break;
         case 'ArrowLeft':
             nextMoves = nextMoveFunction(-1, 0);
@@ -71,7 +71,7 @@ window.addEventListener('keydown', (event) => {
 
                 // If moves are empty restore move options
                 if(moveOptions.length <= 0){
-                    moveOptions = randomArrayFrom(moveBank);
+                    moveOptions = randomArrayFrom(moveBank, 3);
                     moveChoiceTextSprites = [
                     new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
                     new TextSprite(moveOptions[1].name, '32px', 100, 100),

@@ -45,9 +45,9 @@ function remove(array, object){
     }
 }
 
-function randomArrayFrom(array){
+function randomArrayFrom(array, limit){
     let outputArray = [];
-    for(let i = 0; i < array.length; i++){
+    for(let i = 0; i < limit; i++){
         outputArray.push(array[Math.floor(Math.random() * array.length)]);
     }
     return outputArray;
@@ -88,6 +88,21 @@ function oneForeward(xMultiplier, yMultiplier){
     && grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)].traversable){
         wipeNextMoves();
         return [[player.xTile + (1 * xMultiplier), player.yTile + (1 * yMultiplier)]];
+    }
+    return nextMoves;
+}
+
+function oneDiagonal(xMultiplier, yMultiplier){
+    if(Math.abs(xMultiplier) > 0 &&
+    grid[player.yTile + (-1 * xMultiplier)][player.xTile + (1 * xMultiplier)] != null
+    && grid[player.yTile + (-1 * xMultiplier)][player.xTile + (1 * xMultiplier)].traversable){
+        wipeNextMoves();
+        return [[player.xTile + (1 * xMultiplier), player.yTile + (-1 * xMultiplier)]];
+    } else if(Math.abs(yMultiplier) > 0 &&
+    grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * yMultiplier)] != null
+    && grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * yMultiplier)].traversable){
+        wipeNextMoves();
+        return [[player.xTile + (1 * yMultiplier), player.yTile + (1 * yMultiplier)]];
     }
     return nextMoves;
 }
