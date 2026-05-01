@@ -148,3 +148,7 @@ function RockTile(xTile, yTile){
     }
     return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false, 'rock');
 }
+
+function LaunchPad(xTile, yTile){
+    return new Tile(xTile, yTile, 'rgb(52, 224, 243)', true, 'launchpad');
+}

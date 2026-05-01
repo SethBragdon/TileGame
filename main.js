@@ -27,8 +27,8 @@ function mainLoop(){
     player.update();
 
     // Update text
-    for(let i = 0; i < textSprites.length; i++){
-        textSprites[i].draw();
+    for(let i = 0; i < moveChoiceTextSprites.length; i++){
+        moveChoiceTextSprites[i].draw();
     }
 
     window.requestAnimationFrame(mainLoop);
@@ -73,6 +73,8 @@ window.addEventListener('keydown', (event) => {
                 textSprites = moveChoiceTextSprites;
                 moveOptions.splice(moveIndex, 1);
 
+                updateRound();
+
                 // If moves are empty restore move options
                 if(moveOptions.length <= 0){
                     moveOptions = randomArrayFrom(moveBank, 3);
@@ -80,9 +82,6 @@ window.addEventListener('keydown', (event) => {
                     new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
                     new TextSprite(moveOptions[1].name, '32px', 100, 100),
                     new TextSprite(moveOptions[2].name, '32px', 900, 100)];
-                    for(let i = 0; i < moveChoiceTextSprites.length; i++){
-                        textSprites.push(moveChoiceTextSprites[i]);
-                    }
                 }
 
                 moveIndex = 0;

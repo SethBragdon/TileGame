@@ -120,9 +120,19 @@ class TextSprite
     }
 }
 
+// MOVE OPTION CLASS
 class MoveOption{
     constructor(move, name){
         this.move = move;
         this.name = name;
+    }
+}
+
+// LEVEL CLASS
+class Level{
+    constructor(grid, xStart, yStart){
+        this.grid = grid;
+        this.xStart = xStart;
+        this.yStart = yStart;
     }
 }
