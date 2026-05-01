@@ -80,6 +80,15 @@ function wipeNextMoves(){
     nextMoves = [];
 }
 
+function clearMarks(){
+    for(i = 0; i < nextMoves.length; i++){
+        if(nextMoves[i][0] != null && nextMoves[i][1] != null){
+            grid[nextMoves[i][1]][nextMoves[i][0]].reset();
+        }
+    }
+}
+
+
 // MOVEMENT OPTIONS
 function oneForeward(xMultiplier, yMultiplier){
     if(grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * xMultiplier)] != null

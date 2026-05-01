@@ -81,6 +81,7 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'Enter':
             if(nextMoves.length > 0){
+                clearMarks();
                 runningNextMoves = true;
 
                 // Get rid of the current move
