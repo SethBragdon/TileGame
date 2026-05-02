@@ -24,6 +24,8 @@ function nextLevel(reset = false){
         textSprites.push(moveChoiceTextSprites[i]);
     }
     nextMoveFunction = moveOptions[moveIndex].move;
+    
+    gridOffsetX = (canvas.width/2) - (grid[0].length * 25);
 }
 
 function updateRound(){
