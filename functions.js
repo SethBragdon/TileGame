@@ -151,9 +151,9 @@ function GrassTile(xTile, yTile){
 
 function RockTile(xTile, yTile){
     if((xTile + yTile) % 2 == 0){
-        return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false, 'rock');
+        return new Tile(xTile, yTile, 'rgb(149, 97, 59)', false, 'rock', 'nuetral', 'Images\\Tiles\\Rock Tile2.svg');
     }
-    return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false, 'rock');
+    return new Tile(xTile, yTile, 'rgb(192, 123, 62)', false, 'rock', 'nuetral', 'Images\\Tiles\\Rock Tile.svg');
 }
 
 function LavaTile(xTile, yTile){
