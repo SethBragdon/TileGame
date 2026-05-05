@@ -17,15 +17,15 @@ function nextLevel(reset = false){
     moveOptions = randomArrayFrom(moveBank, 3);
     moveIndex = 0;
     moveChoiceTextSprites = [
-        new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
-        new TextSprite(moveOptions[1].name, '32px', 100, 100),
-        new TextSprite(moveOptions[2].name, '32px', 900, 100)];
+        new TextSprite(moveOptions[moveIndex].name, '32px', 700, 100, 'yellow'), 
+        new TextSprite(moveOptions[1].name, '32px', 300, 100),
+        new TextSprite(moveOptions[2].name, '32px', 1100, 100)];
     for(let i = 0; i < moveChoiceTextSprites.length; i++){
         textSprites.push(moveChoiceTextSprites[i]);
     }
     nextMoveFunction = moveOptions[moveIndex].move;
     
-    gridOffsetX = (canvas.width/2) - (grid[0].length * 25);
+    gridOffsetX = (canvas.width/2) - (grid[0].length * 25) - 10;
 }
 
 function updateRound(){

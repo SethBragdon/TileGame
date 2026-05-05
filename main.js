@@ -1,6 +1,8 @@
 // DEFAULT NEXT MOVE FUNCTION
 nextMoveFunction = moveOptions[moveIndex].move;
 
+nextLevel(true);
+
 // MAIN LOOP
 function mainLoop(){
     // Calculate delta time
@@ -93,9 +95,9 @@ window.addEventListener('keydown', (event) => {
                 if(moveOptions.length <= 0){
                     moveOptions = randomArrayFrom(moveBank, 3);
                     moveChoiceTextSprites = [
-                    new TextSprite(moveOptions[moveIndex].name, '32px', 500, 100, 'yellow'), 
-                    new TextSprite(moveOptions[1].name, '32px', 100, 100),
-                    new TextSprite(moveOptions[2].name, '32px', 900, 100)];
+                    new TextSprite(moveOptions[moveIndex].name, '32px',700, 100, 'yellow'), 
+                    new TextSprite(moveOptions[1].name, '32px', 300, 100),
+                    new TextSprite(moveOptions[2].name, '32px', 1100, 100)];
                 }
 
                 moveIndex = 0;
