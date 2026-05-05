@@ -2,4 +2,5 @@
 let grid = [[]];
 
 // Grass tile stuff
-let grassTileColorOptions = ['rgb(6, 117, 69)', 'rgb(9, 146, 87)', 'rgb(19, 161, 99)', 'rgb(3, 102, 59)', 'rgb(0, 130, 73)'];
+let grass1TileImageOptions = ['Images\\Tiles\\Grass Tile.svg', 'Images\\Tiles\\Grass Tile-A.svg', 'Images\\Tiles\\Grass Tile-B.svg', 'Images\\Tiles\\Grass Tile-C.svg'];
+let grass2TileImageOptions = ['Images\\Tiles\\Grass Tile2.svg', 'Images\\Tiles\\Grass Tile2-A.svg', 'Images\\Tiles\\Grass Tile2-B.svg', 'Images\\Tiles\\Grass Tile2-C.svg'];

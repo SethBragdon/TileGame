@@ -144,9 +144,9 @@ function tripleForeward(xMultiplier, yMultiplier){
 // TILE FUNCTIONS
 function GrassTile(xTile, yTile){
     if((xTile + yTile) % 2 == 0){
-        return new Tile(xTile, yTile, grassTileColorOptions[0], true, 'grass');
+        return new Tile(xTile, yTile, 'rgb(6, 117, 69)', true, 'grass', 'nuetral', grass1TileImageOptions[Math.floor(Math.random()*grass1TileImageOptions.length)]);
     }
-    return new Tile(xTile, yTile, grassTileColorOptions[1], true, 'grass');
+    return new Tile(xTile, yTile, 'rgb(9, 146, 87)', true, 'grass', 'nuetral', grass2TileImageOptions[Math.floor(Math.random()*grass2TileImageOptions.length)]);
 }
 
 function RockTile(xTile, yTile){

@@ -72,7 +72,7 @@ class MapboundSprite extends Sprite {
 
 // TILE CLASS
 class Tile {
-    constructor(xTile = null, yTile = null, color = 'black', traversable = true, type = 'grass', state = 'nuetral'){
+    constructor(xTile = null, yTile = null, color = 'black', traversable = true, type = 'grass', state = 'nuetral', image = null){
         this.xTile = xTile;
         this.yTile = yTile;
         this.color = color;
@@ -80,11 +80,23 @@ class Tile {
         this.traversable = traversable;
         this.type = type;
         this.state = state;
+        this.image = image;
+
+        if(this.image != null){
+            this.image = document.createElement('img');
+            this.image.width = 50;
+            this.image.width = 50;
+            this.image.src = image;
+        }
     }
 
     draw(){
         c.fillStyle = this.color;
-        c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
+        if(this.image == null || this.color == 'white'){
+            c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
+        } else {
+            c.drawImage(this.image, this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
+        }
     }
 
     reset(){
