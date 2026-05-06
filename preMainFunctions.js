@@ -4,8 +4,11 @@ function nextLevel(reset = false){
             currentLevel = parseNumberForward(currentLevel, levels.length);
         }
     }
+
+    // Reset player
     player.xTile = levels[currentLevel].xStart;
     player.yTile = levels[currentLevel].yStart;
+    player.image.src = 'Images\\RobotRight.svg';
 
     grid = levels[currentLevel].grid;
     for(let y = 0; y < grid.length; y++){
@@ -25,7 +28,10 @@ function nextLevel(reset = false){
     }
     nextMoveFunction = moveOptions[moveIndex].move;
     
-    gridOffsetX = (canvas.width/2) - (grid[0].length * 25) - 10;
+    // Adjusting position by accounting for grid dimensions
+    // Has to be rounded to prevent weird graphics stuff
+    gridOffsetX = Math.floor((canvas.width/2) - (grid[0].length * 25) - 10);
+    gridOffsetY = Math.floor((canvas.height/2) - (grid.length * 25) - 10);
 }
 
 function updateRound(){
