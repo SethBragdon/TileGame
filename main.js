@@ -40,8 +40,25 @@ function mainLoop(){
         }
     }
 
-    // Update player
-    player.update();
+    // Update sprites
+    for(let i = 0; i < sprites.length; i++){
+        sprites[i].update();
+    }
+
+    // Update timer
+    if(timeLeft > 0){
+        timeLeft = 20000 - (performance.now() - timeStart);
+        timer.width = Math.floor(timeLeft* .02);
+        if(timeLeft < 5000){
+            timer.color = 'red';
+        } else {
+            timer.color = 'green';
+        }
+    } else {
+        nextLevel(true);
+        runNextMoves = false;
+        nextMoves = [];
+    }
 
     // Update text
     for(let i = 0; i < moveChoiceTextSprites.length; i++){
@@ -85,6 +102,7 @@ window.addEventListener('keydown', (event) => {
             if(nextMoves.length > 0){
                 clearMarks();
                 runningNextMoves = true;
+                timeStart = performance.now();
 
                 // Get rid of the current move
                 moveChoiceTextSprites.splice(moveIndex, 1);

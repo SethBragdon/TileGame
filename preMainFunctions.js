@@ -32,6 +32,12 @@ function nextLevel(reset = false){
     // Has to be rounded to prevent weird graphics stuff
     gridOffsetX = Math.floor((canvas.width/2) - (grid[0].length * 25) - 10);
     gridOffsetY = Math.floor((canvas.height/2) - (grid.length * 25) - 10);
+    
+    timeStart = performance.now();
+    timeLeft = timeLeft = 20000 - (performance.now() - timeStart);
+    timer.width = timer.width = Math.floor(timeLeft* .02);
+    timer.xPos = Math.floor((canvas.width/2) - 10 - (timer.width/2));
+    timer.yPos = gridOffsetY + (grid.length * 50) + 50;
 }
 
 function updateRound(){

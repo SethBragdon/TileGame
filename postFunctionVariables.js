@@ -57,9 +57,15 @@ let moveIndex = 0;
 let textSprites = [];
 
 // SPRITES
-//player
+// player
 let player = new MapboundSprite(0, 4, 50, 50, 0, 0, 'yellow', 'Images\\RobotUp.svg');
-let sprites = [player];
+
+// timer
+let timer = new Sprite(500, 200, 500, 25, 0, 0, 'green');
+let timeStart = performance.now();
+let timeLeft = 20000 - (performance.now() - timeStart);
+
+let sprites = [player, timer];
 
 // Load start
 /*player.xTile = levels[currentLevel].xStart;
