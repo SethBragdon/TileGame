@@ -137,8 +137,42 @@ function tripleForeward(xMultiplier, yMultiplier){
         wipeNextMoves();
         return moveSet;
     }
-    alert('miss');
     return nextMoves;
+}
+
+function safeDoubleForeward(xMultiplier, yMultiplier){
+    let moveSet = [];
+    for(let i = 1; i <= 2; i++){
+        if(grid[player.yTile + (i * yMultiplier)] != null && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
+        && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].traversable
+        && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].type != 'lava'){
+            moveSet.push([player.xTile + (i * xMultiplier), player.yTile + (i * yMultiplier)]);
+        } else {
+            break;
+        }
+    }
+    if(moveSet != []){
+        wipeNextMoves();
+        return moveSet;
+    }
+    return nextMoves;
+}
+
+function twoForewardTeleOneStep(xMultiplier, yMultiplier){
+    let moveSet = [];
+    for(let i = 2; i <= 3; i++){
+        if(grid[player.yTile + (i * yMultiplier)] != null && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)] != null
+        && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].traversable
+        && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * xMultiplier)].type != 'lava'){
+            moveSet.push([player.xTile + (i * xMultiplier), player.yTile + (i * yMultiplier)]);
+        } else {
+            break;
+        }
+    }
+    if(moveSet != []){
+        wipeNextMoves();
+        return moveSet;
+    }
 }
 
 // TILE FUNCTIONS

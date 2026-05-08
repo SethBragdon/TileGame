@@ -50,7 +50,9 @@ grid = levels[currentLevel].grid;
 let moveBank = [new MoveOption(oneForeward, 'Single Step'),
     new MoveOption(twoForewardTele, 'Double Teleport'),
     new MoveOption(tripleForeward, 'Triple Run'),
-    new MoveOption(oneDiagonal, 'Diagonal Step')];
+    new MoveOption(oneDiagonal, 'Diagonal Step'),
+    new MoveOption(safeDoubleForeward, 'Safe Double Step'),
+    new MoveOption(twoForewardTeleOneStep, 'Telecharge')];
 let moveOptions = randomArrayFrom(moveBank, 3);
 let moveIndex = 0;
 
