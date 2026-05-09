@@ -17,7 +17,7 @@ let level1_2Grid = [
 
 let level1_3Grid = [
     [GrassTile(0, 0), GrassTile(1, 0), GrassTile(2, 0), LavaTile(3, 0), GrassTile(4, 0), GrassTile(5, 0), GrassTile(6, 0), GrassTile(7, 0), RockTile(8, 0)],
-    [GrassTile(0, 1), GrassTile(1, 1), GrassTile(2, 1), GrassTile(3, 1), GrassTile(4, 1), GrassTile(5, 1), RockTile(6, 1), LaunchPad(7, 1), GrassTile(8, 1)],
+    [GrassTile(0, 1), RockTile(1, 1), GrassTile(2, 1), GrassTile(3, 1), GrassTile(4, 1), GrassTile(5, 1), RockTile(6, 1), LaunchPad(7, 1), GrassTile(8, 1)],
     [GrassTile(0, 2), GrassTile(1, 2), RockTile(2, 2), GrassTile(3, 2), GrassTile(4, 2), RockTile(5, 2), GrassTile(6, 2), GrassTile(7, 2), GrassTile(8, 2)],
     [GrassTile(0, 3), GrassTile(1, 3), RockTile(2, 3), GrassTile(3, 3), GrassTile(4, 3), RockTile(5, 3), RockTile(6, 3), RockTile(7, 3), RockTile(8, 3)],
     [GrassTile(0, 4), GrassTile(1, 4), RockTile(2, 4), GrassTile(3, 4), GrassTile(4, 4), GrassTile(5, 4), GrassTile(6, 4), GrassTile(7, 4), GrassTile(8, 4)],
@@ -37,7 +37,7 @@ let level1_5Grid = [
     [RockTile(0, 3), RockTile(1, 3), GrassTile(2, 3), GrassTile(3, 3), LavaTile(4, 3), LavaTile(5, 3)],
     [GrassTile(0, 4), RockTile(1, 4), GrassTile(2, 4), LavaTile(3, 4), GrassTile(4, 4), LavaTile(5, 4)],
     [GrassTile(0, 5), LavaTile(1, 5), GrassTile(2, 5), GrassTile(3, 5), RockTile(4, 5), GrassTile(5, 5)],
-    [GrassTile(0, 6), LavaTile(1, 6), LavaTile(2, 6), LavaTile(3, 6), GrassTile(4, 6), GrassTile(5, 6)],
+    [GrassTile(0, 6), GrassTile(1, 6), LavaTile(2, 6), LavaTile(3, 6), GrassTile(4, 6), GrassTile(5, 6)],
     [GrassTile(0, 7), GrassTile(1, 7), GrassTile(2, 7), GrassTile(3, 7), GrassTile(4, 7), RockTile(5, 7)]];
 
     // Level array
