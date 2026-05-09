@@ -57,7 +57,7 @@ function randomArrayFrom(array, limit){
 function markNextMoves(){
     for(i = 0; i < nextMoves.length; i++){
         if(nextMoves[i][0] != null && nextMoves[i][1] != null && grid[nextMoves[i][1]][nextMoves[i][0]]){
-            grid[nextMoves[i][1]][nextMoves[i][0]].color = 'white';
+            grid[nextMoves[i][1]][nextMoves[i][0]].preveiw = true;
         }
     }
 }
@@ -231,9 +231,9 @@ function LavaTile(xTile, yTile){
 
 function TideLavaTile(xTile, yTile){
     if((xTile + yTile) % 2 == 0){
-        return new Tile(xTile, yTile, 'rgb(205, 12, 12)', true, 'lava', 'highTide');
+        return new Tile(xTile, yTile, 'rgb(205, 12, 12)', true, 'lava', 'highTide', 'Images\\Tiles\\Lava Tile2.svg');
     }
-    return new Tile(xTile, yTile, 'rgb(55, 52, 50)', true, 'grass', 'lowTide');
+    return new Tile(xTile, yTile, 'rgb(55, 52, 50)', true, 'grass', 'lowTide', 'Images\\Tiles\\Tide Lava Tile.svg');
 }
 
 function LaunchPad(xTile, yTile){

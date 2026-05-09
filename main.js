@@ -29,13 +29,7 @@ function mainLoop(){
         runNextMove();
         if(grid[player.yTile][player.xTile].type == 'lava'){
             nextLevel(true);
-            runNextMoves = false;
-            nextMoves = [];
-        }
-
-        if(nextMoves.length <= 0){
-            nextMoves = [];
-            runningNextMoves = false;
+        } else if(nextMoves.length <= 0){
             updateRound();
         }
     }

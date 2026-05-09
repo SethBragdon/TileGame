@@ -14,7 +14,7 @@ function nextLevel(reset = false){
     tideLavaTiles = [];
     for(let y = 0; y < grid.length; y++){
         for(let x = 0; x < grid[y].length; x++){
-            grid[y][x].reset();
+            grid[y][x].fullReset();
             if(grid[y][x].state == 'lowTide' || grid[y][x].state == 'highTide'){
                 tideLavaTiles.push(grid[y][x]);
             }
@@ -42,26 +42,38 @@ function nextLevel(reset = false){
     timer.width = timer.width = Math.floor(timeLeft* .02);
     timer.xPos = Math.floor((canvas.width/2) - 10 - (timer.width/2));
     timer.yPos = gridOffsetY + (grid.length * 50) + 50;
+
+    // Update moves
+    runningNextMoves = false;
+    nextMoves = [];
 }
 
 function updateRound(){
-    // Check for level completion
+    // Update moves
+    nextMoves = [];
+    runningNextMoves = false;
+
+    // Handle lava tiles
     for(let i = 0; i < tideLavaTiles.length; i++){
         if(tideLavaTiles[i].state == 'highTide'){
             tideLavaTiles[i].state = 'lowTide';
             tideLavaTiles[i].type = 'grass';
             tideLavaTiles[i].color = 'rgb(55, 52, 50)';
+            tideLavaTiles[i].image.src = 'Images\\Tiles\\Tide Lava Tile.svg'
         } else {
             tideLavaTiles[i].state = 'highTide';
             tideLavaTiles[i].type = 'lava';
             if(grid[player.yTile][player.xTile] != tideLavaTiles[i]){
                 tideLavaTiles[i].color = 'rgb(205, 12, 12)';
+                tideLavaTiles[i].image.src = 'Images\\Tiles\\Lava Tile2.svg'
             }else {
                 tideLavaTiles[i].color = 'rgb(55, 52, 50)';
+                tideLavaTiles[i].image.src = 'Images\\Tiles\\Tide Lava Tile.svg'
             }
         }
     }
 
+    // Check for level completion
     if(grid[player.yTile][player.xTile].type == 'launchpad'){
         nextLevel();
     }

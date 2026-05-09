@@ -79,8 +79,12 @@ class Tile {
         this.orgColor = color;
         this.traversable = traversable;
         this.type = type;
+        this.orgType = type;
         this.state = state;
+        this.orgState = state;
         this.image = image;
+        this.orgImage = image;
+        this.preveiw = false;
 
         if(this.image != null){
             this.image = document.createElement('img');
@@ -92,7 +96,10 @@ class Tile {
 
     draw(){
         c.fillStyle = this.color;
-        if(this.image == null || this.color == 'white'){
+        if(this.image == null && !this.preveiw){
+            c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
+        } else if(this.preveiw) {
+            c.fillStyle = 'white'
             c.fillRect(this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
         } else {
             c.drawImage(this.image, this.xTile * 50 + gridOffsetX, this.yTile * 50 + gridOffsetY, 50, 50);
@@ -100,7 +107,18 @@ class Tile {
     }
 
     reset(){
+        this.preveiw = false;
+    }
+
+    fullReset(){
+        this.preveiw = false;
         this.color = this.orgColor;
+        if(this.image != null){
+            this.image.src = this.orgImage;
+        }
+
+        this.state = this.orgState;
+        this.type = this.orgType;
     }
 }
 
