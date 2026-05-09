@@ -229,6 +229,13 @@ function LavaTile(xTile, yTile){
     return new Tile(xTile, yTile, 'rgb(230, 20, 20)', true, 'lava', 'nuetral', 'Images\\Tiles\\Lava Tile2.svg');
 }
 
+function TideLavaTile(xTile, yTile){
+    if((xTile + yTile) % 2 == 0){
+        return new Tile(xTile, yTile, 'rgb(205, 12, 12)', true, 'lava', 'highTide');
+    }
+    return new Tile(xTile, yTile, 'rgb(55, 52, 50)', true, 'grass', 'lowTide');
+}
+
 function LaunchPad(xTile, yTile){
     return new Tile(xTile, yTile, 'rgb(52, 224, 243)', true, 'launchpad', 'nuetral', 'Images\\Tiles\\Launchpad Tile.svg');
 }

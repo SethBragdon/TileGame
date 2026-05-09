@@ -11,9 +11,13 @@ function nextLevel(reset = false){
     player.image.src = 'Images\\RobotRight.svg';
 
     grid = levels[currentLevel].grid;
+    tideLavaTiles = [];
     for(let y = 0; y < grid.length; y++){
         for(let x = 0; x < grid[y].length; x++){
             grid[y][x].reset();
+            if(grid[y][x].state == 'lowTide' || grid[y][x].state == 'highTide'){
+                tideLavaTiles.push(grid[y][x]);
+            }
         }
     }
 
@@ -42,6 +46,22 @@ function nextLevel(reset = false){
 
 function updateRound(){
     // Check for level completion
+    for(let i = 0; i < tideLavaTiles.length; i++){
+        if(tideLavaTiles[i].state == 'highTide'){
+            tideLavaTiles[i].state = 'lowTide';
+            tideLavaTiles[i].type = 'grass';
+            tideLavaTiles[i].color = 'rgb(55, 52, 50)';
+        } else {
+            tideLavaTiles[i].state = 'highTide';
+            tideLavaTiles[i].type = 'lava';
+            if(grid[player.yTile][player.xTile] != tideLavaTiles[i]){
+                tideLavaTiles[i].color = 'rgb(205, 12, 12)';
+            }else {
+                tideLavaTiles[i].color = 'rgb(55, 52, 50)';
+            }
+        }
+    }
+
     if(grid[player.yTile][player.xTile].type == 'launchpad'){
         nextLevel();
     }
