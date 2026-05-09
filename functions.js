@@ -114,6 +114,38 @@ function oneDiagonal(xMultiplier, yMultiplier){
     return nextMoves;
 }
 
+function twoDiagonal(xMultiplier, yMultiplier){
+    let moveSet = [];
+    if(Math.abs(xMultiplier) > 0){
+        for(let i = 1; i <= 2; i++){
+            if(grid[player.yTile + (-i * xMultiplier)] != null && grid[player.yTile + (-i * xMultiplier)][player.xTile + (i * xMultiplier)] != null
+            && grid[player.yTile + (-i * xMultiplier)][player.xTile + (i * xMultiplier)].traversable){
+                moveSet.push([player.xTile + (i * xMultiplier), player.yTile + (-i * xMultiplier)]);
+            } else {
+                break;
+            }
+        }
+    } else if(Math.abs(yMultiplier) > 0 /*&&
+    grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * yMultiplier)] != null
+    && grid[player.yTile + (1 * yMultiplier)][player.xTile + (1 * yMultiplier)].traversable*/){
+        //return [[player.xTile + (1 * yMultiplier), player.yTile + (1 * yMultiplier)]];
+        for(let i = 1; i <= 2; i++){
+            if(grid[player.yTile + (i * yMultiplier)] != null && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * yMultiplier)] != null
+            && grid[player.yTile + (i * yMultiplier)][player.xTile + (i * yMultiplier)].traversable){
+                moveSet.push([player.xTile + (i * yMultiplier), player.yTile + (i *yMultiplier)]);
+            } else {
+                break;
+            }
+        }
+    }
+    
+    if(moveSet != []){
+        wipeNextMoves();
+        return moveSet;
+    }
+    return nextMoves;
+}
+
 function twoForewardTele(xMultiplier, yMultiplier){
     if(grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)] != null
     && grid[player.yTile + (2 * yMultiplier)][player.xTile + (2 * xMultiplier)].traversable){
